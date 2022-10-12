@@ -1,0 +1,36 @@
+{
+  "name": "awesome-fontend",
+  "description": "svg",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShuangDa1018/awesome-fontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShuangDa1018/awesome-fontend/issues"
+  },
+  "homepage": "https://github.com/ShuangDa1018/awesome-fontend#readme",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "vitepress-theme-demoblock": "^1.4.2",
+    "webpack": "^4.42.0"
+  },
+  "dependencies": {
+    "element-ui": "^2.15.10",
+    "node-sass": "^7.0.3",
+    "sass": "^1.55.0",
+    "sass-loader": "^7.1.0",
+    "vuepress": "^1.9.7",
+    "vuepress-plugin-demo-container": "^0.2.0",
+    "vuepress-theme-reco": "^1.6.16"
+  }
+}
