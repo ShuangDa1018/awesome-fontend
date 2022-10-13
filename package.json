@@ -19,8 +19,8 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "deplay": "start deplay.sh",
-    "sh-deplay": "sh deplay.sh"
+    "deploy": "start deploy.sh",
+    "sh-deploy": "sh deploy.sh"
   },
   "devDependencies": {
     "webpack": "^4.42.0"
