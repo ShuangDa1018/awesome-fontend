@@ -1,6 +1,7 @@
 // 底部 给个star 组件 由https://codepen.io/sanzang/pen/LKvNPd 代码修改而来
 <template>
   <div class="bg" @click="starGithub">
+    <img :src="'@/svg/loading/loading-cylon-red.svg'" heigt="100" width="100" />
     <div class="word glitch">
       <div class="flash is-off">
         <span class="text">给个star!</span>

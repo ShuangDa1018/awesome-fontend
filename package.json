@@ -18,10 +18,11 @@
   "homepage": "https://github.com/ShuangDa1018/awesome-fontend#readme",
   "scripts": {
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "deplay": "start deplay.sh",
+    "sh-deplay": "sh deplay.sh"
   },
   "devDependencies": {
-    "vitepress-theme-demoblock": "^1.4.2",
     "webpack": "^4.42.0"
   },
   "dependencies": {
@@ -31,6 +32,7 @@
     "sass-loader": "^7.1.0",
     "vuepress": "^1.9.7",
     "vuepress-plugin-demo-container": "^0.2.0",
+    "vitepress-theme-demoblock": "^1.4.2",
     "vuepress-theme-reco": "^1.6.16"
   }
 }

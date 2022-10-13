@@ -1,4 +1,7 @@
 // .vuepress/config.js
+
+const path = require('path')
+console.log(path.resolve(__dirname, '../../src'))
 module.exports = {
   base: '/awesome-fontend/',
   title: 'awesome-fontend',
@@ -8,6 +11,7 @@ module.exports = {
     ['link', { rel: 'icon', href: '/logo.jpg' }] // 增加一个自定义的 favicon
   ],
   themeConfig: {
+    logo: '/logo.jpg',
     nav: [
       { text: '主页', link: '/' },
       { text: 'Github地址', link: 'https://github.com/ShuangDa1018/awesome-fontend' },
@@ -59,7 +63,7 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        '@alias': '../../src'
+        '@': path.resolve(__dirname, '../../src')
       }
     }
   }
