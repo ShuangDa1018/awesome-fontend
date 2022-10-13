@@ -3,6 +3,7 @@
 # 确保脚本抛出遇到的错误
 set -e
 
+node script/changeREADME.js
 # 生成静态文件
 npm run docs:build
 
@@ -25,5 +26,5 @@ git commit -m '双哥哥又在辛苦的学习更新代码了'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 git push -f https://github.com/ShuangDa1018/awesome-fontend.git  master:gh-pages
-#  git push --set-upstream https://github.com/ShuangDa1018/awesome-fontend.git master
+
 cd -
