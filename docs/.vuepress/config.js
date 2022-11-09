@@ -10,6 +10,19 @@ module.exports = {
   head: [
     ['link', { rel: 'icon', href: '/logo.jpg' }] // 增加一个自定义的 favicon
   ],
+  locales: {
+    // 键名是该语言所属的子路径
+    // 作为特例，默认语言可以使用 '/' 作为其路径。
+    '/': {
+      lang: 'zh-CN',
+      'demo-block': {
+        'hide-text': '隐藏代码',
+        'show-text': '显示代码',
+        'copy-text': '复制代码',
+        'copy-success': '复制成功'
+      }
+    },
+  },
   themeConfig: {
     logo: '/logo.jpg',
     nav: [
@@ -26,11 +39,21 @@ module.exports = {
           collapsable: false,
           children: [
             { title: 'loading', path: 'svg/loading' },
+            { title: 'animate', path: 'svg/animate' },
             { title: 'icon', path: 'svg/icon' }
           ]
         },
         // isDev?{title:'atest',path: 'atest',},// 测试组件打开用()
-        { title: 'copy 复制', path: 'copy' }
+        { title: 'copy 复制', path: 'copy' },
+        {
+          title: 'codeopen',
+          collapsable: false,
+          children: [
+            { title: 'svg', path: 'codeopen/svg' },
+            { title: 'animate', path: 'svg/animate' },
+            { title: 'icon', path: 'svg/icon' }
+          ]
+        },
       ]
     }
   },
@@ -58,12 +81,14 @@ module.exports = {
       }
     ], //平台的 base URL
     ['@vuepress/last-updated'],
-    [require('../vue-demo')]
+    ['demo-container']
+    // [require('../vue-demo')]
   ],
   configureWebpack: {
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '../../src')
+        '@': path.resolve(__dirname, '../../src'),
+        '@alias':  path.resolve(__dirname, 'public'),
       }
     }
   }
