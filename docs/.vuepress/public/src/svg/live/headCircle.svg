@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54" fill="none">
+    <circle cx="27" cy="27" r="18" stroke="#C62430">
+        <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite" />
+        <animate attributeName="stroke-width" values="2;1.5;2" dur="1.5s" repeatCount="indefinite" />
+        <animate attributeName="r" values="18;17.5;18" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="27" cy="27" r="26" stroke="#C62430" stroke-opacity="0.5" stroke-width="1">
+        <animate attributeName="r" values="20;23;20" dur="1.5s"  repeatCount="indefinite" />
+        <animate attributeName="stroke-opacity" values="0.5;0;0" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+</svg>
