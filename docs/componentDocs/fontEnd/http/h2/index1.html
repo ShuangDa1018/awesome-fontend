@@ -1,0 +1,116 @@
+<!-- http1_vs_http2.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>http1 vs http2</title>
+   <script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+   <style>
+   	.box {
+   		float: left;
+   		width: 200px;
+   		margin-right: 100px;
+   		margin-bottom: 50px;
+   		padding: 20px;
+   		border: 4px solid pink;
+   		font-family: Microsoft Yahei;
+   	}
+   	.box h2 {
+   		margin: 5px 0;
+   	}
+   	.box .done {
+   		color: pink;
+   		font-weight: bold;
+   		font-size: 18px;
+   	}
+   	.box button {
+   		padding: 10px;
+   		display: block;
+   		margin: 10px 0;
+   	}
+   </style>
+</head>
+<body>
+   <div class="box">
+   	<h2>Http1.x</h2>
+   	<p>Time: <span id="output-http1"></span></p>
+   	<p class="done done-1">× Unfinished...</p>
+   	<button class="btn-1">Get Response</button>
+   </div>
+
+   <div class="box">
+   	<h2>Http2</h2>
+   	<p>Time: <span id="output-http2"></span></p>
+   	<p class="done done-1">× Unfinished...</p>
+   	<button class="btn-2">Get Response</button>
+   </div>
+
+   <div class="box">
+   	<h2>Options</h2>
+   	<p>Request Num: <input type="text" id="req-num"></p>
+   	<p>Request Size (Mb): <input type="text" id="req-size"></p>
+   	<p>Request Delay (ms): <input type="text" id="req-delay"></p>
+   </div>
+
+   <script>
+   	function imageLoadTime(id, pageStart) {
+   	  let lapsed = Date.now() - pageStart;
+   	  document.getElementById(id).innerHTML = ((lapsed) / 1000).toFixed(2) + 's'
+   	}
+   	
+   	let boxes = document.querySelectorAll('.box')
+   	let doneTip = document.querySelectorAll('.done')
+   	let reqNumInput = document.querySelector('#req-num')
+   	let reqSizeInput = document.querySelector('#req-size')
+   	let reqDelayInput = document.querySelector('#req-delay')
+
+   	let reqNum = 100
+   	let reqSize = 0.1
+   	let reqDelay =50
+
+   	reqNumInput.value = reqNum
+   	reqSizeInput.value = reqSize
+   	reqDelayInput.value = reqDelay
+
+   	reqNumInput.onblur = function () {
+   		reqNum = reqNumInput.value
+   	}
+
+   	reqSizeInput.onblur = function () {
+   		reqSize = reqSizeInput.value
+   	}
+
+   	reqDelayInput.onblur = function () {
+   		reqDelay = reqDelayInput.value
+   	}
+
+   	function clickEvents(index, url, output, server) {
+   		doneTip[index].innerHTML = '× Unfinished...'
+   		doneTip[index].style.color = 'pink'
+   		boxes[index].style.borderColor = 'pink'
+   		let pageStart = Date.now()
+   		for (let i = 0; i < reqNum; i++) {
+			console.log(1);
+   			$.get(url, function (data) {
+   				console.log(server + ' data')
+   				imageLoadTime(output, pageStart)
+   				if (i === reqNum - 1) {
+   					doneTip[index].innerHTML = '√ Finished!'
+   					doneTip[index].style.color = 'lightgreen'
+   					boxes[index].style.borderColor = 'lightgreen'
+   				}
+   			})
+   		}
+   	}
+
+   	document.querySelector('.btn-1').onclick = function () {
+   		clickEvents(0, 'https://localhost:1001/option?size=' + reqSize + '&delay=' + reqDelay, 'output-http1', 'http1.x')
+   	}
+
+   	document.querySelector('.btn-2').onclick = function () {
+   		clickEvents(1, 'https://localhost:1002/option?size=' + reqSize + '&delay=' + reqDelay, 'output-http2', 'http2')
+   	}
+   </script>
+</body>
+</html>
