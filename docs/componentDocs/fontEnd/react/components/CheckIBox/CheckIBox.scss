@@ -1,0 +1,82 @@
+.custom-close-action-box {
+    cursor: pointer;
+    span {
+        font-size: 12px;
+        color: var(--main-color);
+    }
+    span {
+        display: inline-block;
+        vertical-align: middle;
+        transform: translate3d(0, 0, 0);
+    }
+    .check-icon {
+        position: relative;
+        width: 18px;
+        height: 18px;
+        border-radius: 3px;
+        transform: scale(1);
+        vertical-align: middle;
+        border: 1px solid #9098a9;
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .check-icon svg {
+        position: absolute;
+        // top: 3px;
+        // left: 2px;
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 16px;
+        stroke-dashoffset: 16px;
+        transition: all 0.3s ease;
+        transition-delay: 0.1s;
+        transform: translate3d(0, 0, 0);
+    }
+    .check-icon:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: var(--main-color);
+        display: block;
+        transform: scale(0);
+        opacity: 1;
+        border-radius: 50%;
+    }
+    .check-text {
+        padding-left: 8px;
+    }
+    :hover .check-icon {
+        border-color: var(--main-color);
+    }
+}
+
+.btnChecked {
+    .check-icon {
+        background: var(--main-color);
+        border-color: var(--main-color);
+        animation: wave-46 0.4s ease;
+    }
+}
+.btnChecked {
+    .check-icon svg {
+        stroke-dashoffset: 0;
+    }
+}
+.btnChecked {
+    .check-icon:before {
+        transform: scale(3.5);
+        opacity: 0;
+        transition: all 0.6s ease;
+    }
+}
+
+@keyframes wave-46 {
+    50% {
+        transform: scale(0.9);
+    }
+}
