@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="g-bg">
+      <div class="g-polygon-1"></div>
+      <div class="g-polygon-2"></div>
+      <div class="g-polygon-3"></div>
+    </div>
+
+    <style>
+      .g-bg {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        background-color: #000;
+        filter: blur(10px);
+        & > div {
+          position: absolute;
+          opacity: 0.5;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          backdrop-filter: blur(150px);
+          z-index: 1;
+        }
+      }
+
+      .g-polygon-1 {
+        bottom: 100px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 714px;
+        height: 390px;
+        background: linear-gradient(#302d14, #fdee99);
+        clip-path: polygon(0 10%, 30% 0, 100% 40%, 70% 100%, 20% 90%);
+      }
+
+      .g-polygon-2 {
+        bottom: 0px;
+        left: 30%;
+        transform: translate(-50%, 0);
+        width: 1000px;
+        height: 450px;
+        background: linear-gradient(-36deg, #22101f, #f980d9);
+        clip-path: polygon(10% 0, 100% 70%, 100% 100%, 20% 90%);
+      }
+
+      .g-polygon-3 {
+        bottom: 0px;
+        left: 70%;
+        transform: translate(-50%, 0);
+        width: 1000px;
+        height: 450px;
+        background: rgb(18, 13, 108);
+        clip-path: polygon(80% 0, 100% 70%, 100% 100%, 20% 90%);
+      }
+    </style>
+  </body>
+</html>

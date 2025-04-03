@@ -1,23 +1,16 @@
+import { CSSProperties } from 'react'
 import './NumberScroll.scss'
-function randomNumber(n: number, m: number) {
-    const random = Math.floor(Math.random() * (m - n + 1) + n)
-    return random
+interface NumberScrollProps {
+    value: string | number
+    fontSize?: string
 }
-// 来自 github numbers-scroll
-export default function NumbersCount(props: any) {
-    const { value, numberStyle = {} } = props
-    const { fontSize = 16 } = numberStyle
-    const numberStyleObj = {
-        width: '0',
-    }
-
-    if (fontSize) {
-        numberStyleObj.width = (fontSize * 0.6) / 100 + 'rem'
-    }
+// 来自 github numbers-scroll-ignore
+export default function NumberScroll(props: NumberScrollProps) {
+    const { value, fontSize = '16px' } = props
     const tempNumberArray = (value + '').split('')
 
     return (
-        <div className="numbers-container">
+        <div className="numbers-container-ignore" style={{ '--fontSize': fontSize } as CSSProperties}>
             {tempNumberArray.map((number, index) => {
                 let scrollClass = ''
                 if (number === '0') {
@@ -27,13 +20,13 @@ export default function NumbersCount(props: any) {
                 }
                 if (isNaN(Number(number))) {
                     return (
-                        <div className="numbers-box" key={index}>
+                        <span className="numbers-box-ignore" key={index}>
                             {number}
-                        </div>
+                        </span>
                     )
                 }
                 return (
-                    <div className="numbers-box" key={index} style={numberStyleObj}>
+                    <span className="numbers-box-ignore" key={index}>
                         <span className={scrollClass}>
                             <label>0</label>
                             <label>1</label>
@@ -47,9 +40,14 @@ export default function NumbersCount(props: any) {
                             <label>9</label>
                             <label>0</label>
                         </span>
-                    </div>
+                    </span>
                 )
             })}
         </div>
     )
+}
+
+function randomNumber(n: number, m: number) {
+    const random = Math.floor(Math.random() * (m - n + 1) + n)
+    return random
 }

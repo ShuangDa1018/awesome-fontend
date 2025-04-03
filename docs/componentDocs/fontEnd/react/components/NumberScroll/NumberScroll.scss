@@ -1,8 +1,6 @@
-.numbers-container {
-    $marginTop: 16px;
-    height: $marginTop;
-    line-height: $marginTop;
-    font-size: $marginTop;
+.numbers-container-ignore {
+    height: var(--fontSize);
+    line-height: var(--fontSize);
     @keyframes scrollNumber0 {
         0% {
             margin-top: 0px;
@@ -15,168 +13,85 @@
         0% {
             margin-top: 0px;
         }
-        100% {
-            margin-top: -1 * $marginTop;
-        }
     }
 
-    @keyframes scrollNumber2 {
-        0% {
-            margin-top: 0px;
-        }
-        100% {
-            margin-top: -2 * $marginTop;
-        }
-    }
-
-    @keyframes scrollNumber3 {
-        0% {
-            margin-top: 0px;
-        }
-        100% {
-            margin-top: -3 * $marginTop;
-        }
-    }
-    @keyframes scrollNumber4 {
-        0% {
-            margin-top: 0px;
-        }
-        100% {
-            margin-top: -4 * $marginTop;
-        }
-    }
-    @keyframes scrollNumber5 {
-        0% {
-            margin-top: 0px;
-        }
-        100% {
-            margin-top: -5 * $marginTop;
-        }
-    }
-    @keyframes scrollNumber6 {
-        0% {
-            margin-top: 0px;
-        }
-        100% {
-            margin-top: -6 * $marginTop;
-        }
-    }
-    @keyframes scrollNumber7 {
-        0% {
-            margin-top: 0px;
-        }
-        100% {
-            margin-top: -7 * $marginTop;
-        }
-    }
-    @keyframes scrollNumber8 {
-        0% {
-            margin-top: 0px;
-        }
-        100% {
-            margin-top: -8 * $marginTop;
-        }
-    }
-    @keyframes scrollNumber9 {
-        0% {
-            margin-top: 0px;
-        }
-        100% {
-            margin-top: -9 * $marginTop;
-        }
-    }
-
-    .numbers-box {
-        // width: 57px;
-        height: $marginTop;
-        overflow-x: hidden;
+    .numbers-box-ignore {
+        height: var(--fontSize);
         overflow-y: hidden;
-        font-size: $marginTop;
-        font-weight: 600;
-        float: left;
+        font-size: var(--fontSize);
+        display: inline-block;
         span {
-            width: 100%;
-            height: 550px;
-            font-size: $marginTop;
+            font-size: var(--fontSize);
             font-weight: 600;
             display: block;
             text-align: center;
+            display: flex;
+            flex-direction: column;
             label {
                 width: 100%;
-                float: left;
-            }
-            label:nth-child(1),
-            label:nth-child(2),
-            label:nth-child(3),
-            label:nth-child(4),
-            label:nth-child(5),
-            label:nth-child(6),
-            label:nth-child(7),
-            label:nth-child(8),
-            label:nth-child(9),
-            label:nth-child(10) {
-                padding-top: 0rem;
+                display: inline-block;
             }
         }
+        --animationScroll: scrollNumber1 1.2s cubic-bezier(0.25, 1, 0.5, 1) 1 normal;
         .numbers-scroll00 {
-            margin-top: -10 * $marginTop;
-            animation: scrollNumber0 1s linear 1 normal;
+            margin-top: calc(-10 * var(--fontSize));
+            animation: scrollNumber0 1s cubic-bezier(0.25, 1, 0.5, 1) 1 normal;
         }
         .numbers-scroll01 {
-            margin-top: -10 * $marginTop;
-            animation: scrollNumber0 0.9s linear 1 normal;
+            margin-top: calc(-10 * var(--fontSize));
+            animation: scrollNumber0 0.9s cubic-bezier(0.25, 1, 0.5, 1) 1 normal;
         }
         .numbers-scroll02 {
-            margin-top: -10 * $marginTop;
-            animation: scrollNumber0 1.4s linear 1 normal;
+            margin-top: calc(-10 * var(--fontSize));
+            animation: scrollNumber0 1.4s cubic-bezier(0.25, 1, 0.5, 1) 1 normal;
         }
         .numbers-scroll03 {
-            margin-top: -10 * $marginTop;
-            animation: scrollNumber0 1.2s linear 1 normal;
+            margin-top: calc(-10 * var(--fontSize));
+            animation: scrollNumber0 1.2s cubic-bezier(0.25, 1, 0.5, 1) 1 normal;
         }
         .numbers-scroll04 {
-            margin-top: -10 * $marginTop;
-            animation: scrollNumber0 1.8s linear 1 normal;
+            margin-top: calc(-10 * var(--fontSize));
+            animation: scrollNumber0 1.8s cubic-bezier(0.25, 1, 0.5, 1) 1 normal;
         }
         .numbers-scroll05 {
-            margin-top: -10 * $marginTop;
-            animation: scrollNumber0 1.6s linear 1 normal;
+            margin-top: calc(-10 * var(--fontSize));
+            animation: scrollNumber0 1.6s cubic-bezier(0.25, 1, 0.5, 1) 1 normal;
         }
         .numbers-scroll1 {
-            margin-top: -$marginTop;
-            animation: scrollNumber1 1.2s linear 1 normal;
+            margin-top: -var(--fontSize);
+            animation: var(--animationScroll);
         }
         .numbers-scroll2 {
-            margin-top: -2 * $marginTop;
-            animation: scrollNumber2 1.2s linear 1 normal;
+            margin-top: calc(-2 * var(--fontSize));
+            animation: var(--animationScroll);
         }
         .numbers-scroll3 {
-            margin-top: -3 * $marginTop;
-            animation: scrollNumber3 1.2s linear 1 normal;
+            margin-top: calc(-3 * var(--fontSize));
+            animation: var(--animationScroll);
         }
         .numbers-scroll4 {
-            margin-top: -4 * $marginTop;
-            animation: scrollNumber4 1.2s linear 1 normal;
+            margin-top: calc(-4 * var(--fontSize));
+            animation: var(--animationScroll);
         }
         .numbers-scroll5 {
-            margin-top: -5 * $marginTop;
-            animation: scrollNumber5 1.2s linear 1 normal;
+            margin-top: calc(-5 * var(--fontSize));
+            animation: var(--animationScroll);
         }
         .numbers-scroll6 {
-            margin-top: -6 * $marginTop;
-            animation: scrollNumber6 1.2s linear 1 normal;
+            margin-top: calc(-6 * var(--fontSize));
+            animation: var(--animationScroll);
         }
         .numbers-scroll7 {
-            margin-top: -7 * $marginTop;
-            animation: scrollNumber7 1.2s linear 1 normal;
+            margin-top: calc(-7 * var(--fontSize));
+            animation: var(--animationScroll);
         }
         .numbers-scroll8 {
-            margin-top: -8 * $marginTop;
-            animation: scrollNumber8 1.2s linear 1 normal;
+            margin-top: calc(-8 * var(--fontSize));
+            animation: var(--animationScroll);
         }
         .numbers-scroll9 {
-            margin-top: -9 * $marginTop;
-            animation: scrollNumber9 1.2s linear 1 normal;
+            margin-top: calc(-9 * var(--fontSize));
+            animation: var(--animationScroll);
         }
     }
 }
