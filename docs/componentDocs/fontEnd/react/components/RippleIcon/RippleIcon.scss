@@ -1,0 +1,59 @@
+.ripple-icon {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    .icon-box{
+        z-index: 2;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+    }
+    .circle1,
+    .circle2,
+    .circle3 {
+        width: 60px;
+        height: 60px;
+        background: var(--color, #70a1ff1a);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        opacity: 0;
+    }
+    .circle1,
+    .circle2,
+    .circle3 {
+        animation-name: circleChange;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+    .circle1 {
+        animation-delay: 0s;
+    }
+    .circle2 {
+        animation-delay: 1s;
+    }
+    .circle3 {
+        animation-delay: 2s;
+    }
+  
+
+    @keyframes circleChange {
+        0% {
+            transform: scale(1.2);
+            opacity: 0;
+        }
+        10% {
+            transform: scale(1.3);
+            opacity: 0.2;
+        }
+        100% {
+            transform: scale(2);
+            opacity: 0;
+        }
+    }
+}
