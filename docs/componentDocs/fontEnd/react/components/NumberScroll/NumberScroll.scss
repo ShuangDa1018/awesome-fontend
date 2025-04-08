@@ -58,7 +58,7 @@
             animation: scrollNumber0 1.6s cubic-bezier(0.25, 1, 0.5, 1) 1 normal;
         }
         .numbers-scroll1 {
-            margin-top: -var(--fontSize);
+            margin-top: calc(-1 * var(--fontSize));
             animation: var(--animationScroll);
         }
         .numbers-scroll2 {
