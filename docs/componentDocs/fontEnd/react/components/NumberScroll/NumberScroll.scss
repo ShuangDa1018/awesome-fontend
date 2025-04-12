@@ -1,20 +1,6 @@
 .numbers-container-ignore {
     height: var(--fontSize);
     line-height: var(--fontSize);
-    @keyframes scrollNumber0 {
-        0% {
-            margin-top: 0px;
-        }
-        100% {
-            margin-top: -1100;
-        }
-    }
-    @keyframes scrollNumber1 {
-        0% {
-            margin-top: 0px;
-        }
-    }
-
     .numbers-box-ignore {
         height: var(--fontSize);
         overflow-y: hidden;
@@ -32,66 +18,15 @@
                 display: inline-block;
             }
         }
-        --animationScroll: scrollNumber1 1.2s cubic-bezier(0.25, 1, 0.5, 1) 1 normal;
-        .numbers-scroll00 {
-            margin-top: calc(-10 * var(--fontSize));
-            animation: scrollNumber0 1s cubic-bezier(0.25, 1, 0.5, 1) 1 normal;
+    }
+    @keyframes scrollNumber {
+        0% {
+            transform: translateY(0px);
         }
-        .numbers-scroll01 {
-            margin-top: calc(-10 * var(--fontSize));
-            animation: scrollNumber0 0.9s cubic-bezier(0.25, 1, 0.5, 1) 1 normal;
-        }
-        .numbers-scroll02 {
-            margin-top: calc(-10 * var(--fontSize));
-            animation: scrollNumber0 1.4s cubic-bezier(0.25, 1, 0.5, 1) 1 normal;
-        }
-        .numbers-scroll03 {
-            margin-top: calc(-10 * var(--fontSize));
-            animation: scrollNumber0 1.2s cubic-bezier(0.25, 1, 0.5, 1) 1 normal;
-        }
-        .numbers-scroll04 {
-            margin-top: calc(-10 * var(--fontSize));
-            animation: scrollNumber0 1.8s cubic-bezier(0.25, 1, 0.5, 1) 1 normal;
-        }
-        .numbers-scroll05 {
-            margin-top: calc(-10 * var(--fontSize));
-            animation: scrollNumber0 1.6s cubic-bezier(0.25, 1, 0.5, 1) 1 normal;
-        }
-        .numbers-scroll1 {
-            margin-top: calc(-1 * var(--fontSize));
-            animation: var(--animationScroll);
-        }
-        .numbers-scroll2 {
-            margin-top: calc(-2 * var(--fontSize));
-            animation: var(--animationScroll);
-        }
-        .numbers-scroll3 {
-            margin-top: calc(-3 * var(--fontSize));
-            animation: var(--animationScroll);
-        }
-        .numbers-scroll4 {
-            margin-top: calc(-4 * var(--fontSize));
-            animation: var(--animationScroll);
-        }
-        .numbers-scroll5 {
-            margin-top: calc(-5 * var(--fontSize));
-            animation: var(--animationScroll);
-        }
-        .numbers-scroll6 {
-            margin-top: calc(-6 * var(--fontSize));
-            animation: var(--animationScroll);
-        }
-        .numbers-scroll7 {
-            margin-top: calc(-7 * var(--fontSize));
-            animation: var(--animationScroll);
-        }
-        .numbers-scroll8 {
-            margin-top: calc(-8 * var(--fontSize));
-            animation: var(--animationScroll);
-        }
-        .numbers-scroll9 {
-            margin-top: calc(-9 * var(--fontSize));
-            animation: var(--animationScroll);
+    }
+    @keyframes scrollLoading {
+        100% {
+            transform: translateY(calc(var(--number) * var(--fontSize)));
         }
     }
 }
